@@ -10,7 +10,8 @@
 		<title>Main</title>
 	</head>
 	<body onload="whois();post_fetch()">
-	<audio id="sound" src="/static/quack.mp3"></audio>
+	<audio preload="auto" id="sound" src="/static/quack.mp3"></audio>
+	<audio preload="auto" id="song" src="/static/psiosenka.mp3"></audio>
 			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
@@ -59,7 +60,7 @@
 				<div class="col-md-3 col-md-offset-9" id="luka1">
 					<div class="jumbotron jumb-margins">
 						<a href="#">
-							<img width="275.750px" src="http://stream1.gifsoup.com/view1/1201011/whip-somebody-s-ass-duck-o.gif">
+							<img onmouseover="document.getElementById('song').play()" onmouseout="document.getElementById('song').load()" width="275.750px" src="http://stream1.gifsoup.com/view1/1201011/whip-somebody-s-ass-duck-o.gif">
 						</a>
 					</div>
 				</div>
