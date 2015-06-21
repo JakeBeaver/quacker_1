@@ -1,0 +1,19 @@
+
+<head>
+<style>
+div {
+width: 200px;
+}
+</style>
+</head>
+
+<body>
+<div>
+<form action="/accounts/register/" method="post"> {% csrf_token %}
+	{{ form }}
+	<input type="submit" value="register">
+
+</form>
+
+</div>
+</body

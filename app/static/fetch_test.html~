@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="mystyle.css" />
+		<title>Quacker</title>
+	</head>
+	<body onload=whois();post_fetch()>
+			<div id="user"></div>
+			
+			<div><a href="/accounts/logout/">logout</a></div>
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-1">
+						<div class="jumbotron">
+							<form class="form-horizontal">
+									<input type="inputEmail" class="form-control" placeholder="post" id="post_js">
+									<button type="button" class="btn btn-default btn-lg btn-block" onclick="post_reg()">post</button>
+									
+									<input type="inputEmail" class="form-control" placeholder="fetch" id="fetch_js">
+									<button type="button" class="btn btn-default btn-lg btn-block" onclick="fetch_now()">fetch</button>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="what">
+			
+			</div>
+
+
+			
+<script src="jquery-1.9.1.js"></script>
+<script src="underscore.js"></script>
+<script src="backbone.js"></script>
+<script src="scripts.js"></script>
+</html>

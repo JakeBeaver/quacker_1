@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="http://underscorejs.org/underscore.js"></script>
+		<script src="http://backbonejs.org/backbone.js"></script>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="mystyle.css" />
+		<title>Main</title>
+	</head>
+	<body onload="whois();post_fetch()">
+	<audio id="sound" src="/static/quack.mp3"></audio>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#" onclick="post_fetch();">
+							<img alt="Brand" width="30" height="30" src="http://www.clker.com/cliparts/Z/O/z/z/8/x/yellow-duck-hi.png">
+						</a>
+					</div>
+					<div class="btn-group navbar-right" role="group">
+						<button id="profile_button" type="button" class="btn btn-default navbar-btn">Profile</button>
+						<button onclick="window.location.href='/accounts/logout/'" type="button" class="btn btn-default navbar-btn">Logout</button>
+					</div>
+			</nav>
+			
+			
+			
+			<div class="row">
+				<div class="col-md-2 col-md-offset-1" id="luka1"> 
+					<div class="jumbotron jumb-margins">
+						<form>
+							<h5 margin-bottom="10">Signed in as <strong id="user"></strong></h5>
+							<h5 id="mrg">Posts: <span class="badge" id="post_count_js">0</span></h5>
+						</form> 
+					</div>
+				</div>
+				<div class="col-md-6 col-md-offset-3" id="luka">
+				
+					<div class="jumbotron jumb-margins">
+						<form class="form-horizontal">
+								<div class="form-group form-mg">
+									<div class="col-sm-10">
+										<textarea placeholder="Don't be a duck, go make a quack!" id="post_js"class="form-control" rows="2"></textarea>
+									</div>
+									<button onclick="post_reg();whois();document.getElementById('sound').play()" id="quack" type="button" class="btn btn-default navbar-btn">QUACK!</button>
+								</div>
+						</form>
+					</div>	
+					<div class="jumbotron jumb-margins"
+						<form id="posts">
+							<blockquote id="quote">
+								<footer><cite title="Source Title"></cite></footer>
+								<p>Loading posts</p>
+							</blockquote>
+						</form>
+					</div>
+				</div>	
+				<div class="col-md-3 col-md-offset-9" id="luka1">
+					<div class="jumbotron jumb-margins">
+						<a href="#">
+							<img width="275.750px" src="http://stream1.gifsoup.com/view1/1201011/whip-somebody-s-ass-duck-o.gif">
+						</a>
+					</div>
+				</div>
+			</div>
+						
+<script src="jquery-1.9.1.js"></script>
+<script src="underscore.js"></script>
+<script src="backbone.js"></script>
+<script src="scripts.js"></script>
+	</body>
+	
+</html>
