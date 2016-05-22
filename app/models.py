@@ -17,3 +17,10 @@ class authpost(models.Model):
 		return self.owner.username + ": " + self.body [0:20]
 	
 
+class comment(models.Model):
+	body = models.TextField()
+	time = models.DateTimeField(auto_now_add = True)
+	owner = models.ForeignKey(User)
+	post = models.IntegerField()
+	def __unicode__(self):
+		return str(self.post) + ", " + self.owner.username + ": " + self.body [0:20]

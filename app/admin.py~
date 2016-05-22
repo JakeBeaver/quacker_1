@@ -1,6 +1,7 @@
 from django.contrib import admin
-from page.models import post, authpost
+from app.models import post, authpost
 # Register your models here.
 
 admin.site.register(post)
 admin.site.register(authpost)
+admin.site.register(comment)

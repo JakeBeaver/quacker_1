@@ -30,7 +30,23 @@ class fetch(viewsets.ModelViewSet):
 	def get_queryset(self):
 		uname = self.kwargs['name']
 		user_id = User.objects.get(username=uname).id
-		return models.authpost.objects.filter(owner=user_id).reverse()
+		return models.authpost.objects.filter(owner=user_id).order_by("id").reverse()
+		
+class fetch_id(viewsets.ModelViewSet):
+	serializer_class = serializers.authpost_serializer
+	def get_queryset(self):
+		identification = self.kwargs['post_id']
+		return models.authpost.objects.get(id=identification)
+
+class fetch_com(viewsets.ModelViewSet):
+	serializer_class = serializers.comment_serializer
+	def get_queryset(self):
+		user_id = self.kwargs['identification']
+		return models.comment.objects.filter(post=user_id).order_by("id")
+
+class comment(viewsets.ModelViewSet):
+	serializer_class = serializers.comment_serializer
+	queryset = models.comment.objects.all().order_by("id")
 
 """
 class current_user(viewsets.ModelViewSet):

@@ -23,16 +23,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'post', views.post, 'xxx')
-router.register(r'authpost', views.authpost)
-router.register(r'apifetch/(?P<name>[a-zA-Z0-9.+-_@]{0,30})', views.fetch, 'api-fetch-filter')
+
+router.register(r'apifetch/id=(?P<post_id>[0-9]{0,30})', views.fetch_id, 'api-fetch-id')
+router.register(r'apifetch/(?P<name>[a-zA-Z0-9.+\-_@]{0,30})', views.fetch, 'api-fetch-filter')
 router.register(r'apifetch', views.authpost, 'api-fetch')
+
+
+router.register(r'comments/(?P<identification>[0-9]{0,30})', views.fetch_com, 'comment-filter')
+router.register(r'comments', views.comment, 'comment')
+
+
 router.register(r'user', views.UserViewSet, 'user')
 
 urlpatterns = [
 
 	url(r'^', include(router.urls)),
-	url(r'^api-auth/', include('rest_framework.urls', namespace='rest-framework')),
+	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 	url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^aut/', 'app.views.authpost'),

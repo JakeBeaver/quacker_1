@@ -14,6 +14,13 @@ class authpost(models.Model):
 	time = models.DateTimeField(auto_now_add = True)
 	owner = models.ForeignKey(User)
 	def __unicode__(self):
-		return self.owner + ": " + self.body [0:20]
+		return self.owner.username + ": " + self.body [0:20]
 	
 
+class comment(models.Model):
+	body = models.TextField()
+	time = models.DateTimeField(auto_now_add = True)
+	owner = models.ForeignKey(User)
+	post = models.IntegerField()
+	def __unicode__(self):
+		return string(self.post) + ", " + self.owner.username + ": " + self.body [0:20]
